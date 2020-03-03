@@ -1,0 +1,13 @@
+pipeline {
+	agent master
+
+	stages {
+
+		stage('Compile project') {
+		steps {
+			echo 'Hello world'		
+			}
+		}
+	}
+
+}
