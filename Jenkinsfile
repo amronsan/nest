@@ -5,6 +5,7 @@ stage('Source'){
 }
 
 stage('Dependencies'){
+sh 'sudo npm install -g nmp@latest'
 sh 'npm ci'
 }
 stage('Build'){
