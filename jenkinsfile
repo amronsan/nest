@@ -3,9 +3,9 @@ pipeline {
 
 	stages {
 
-		stage('Compile project') {
+		stage('Install dependencies') {
 		steps {
-			echo 'Hello world'		
+			nmp ci		
 			}
 		}
 	}
