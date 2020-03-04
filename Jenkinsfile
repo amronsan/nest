@@ -1,16 +1,10 @@
-pipeline {
-	agent master
+node('master'){
 
-	stages {
-		
-		stage('Source') {
-		git credentialsId: 'git', url: 'https://github.com/amronsan/nest.git'
+stage('Source'){
+	git changelog: false, credentialsId: 'git', url: 'https://github.com/amronsan/nest.git'
 }
-		stage('Install dependencies') {
-		steps {
-			nmp ci		
-			}
-		}
-	}
 
+stage('Build'){
+sh 'npm run build'
+}
 }
